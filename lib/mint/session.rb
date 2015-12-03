@@ -6,7 +6,7 @@ module Mint
       response = request
 
       error = JSON.parse(response)['error']
-      raise(error) if error
+      raise(Exception.new error) if error
 
       @cookies = response.cookies
     end
